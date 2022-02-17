@@ -5,9 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
-import pandas as pd
-pd.options.display.max_columns = 500
-pd.options.mode.chained_assignment = None
 
 
 class PainelAneel():
@@ -18,7 +15,7 @@ class PainelAneel():
         ignored_exceptions = (NoSuchElementException, StaleElementReferenceException)
         self.wait = WebDriverWait(self.driver, 10, ignored_exceptions=ignored_exceptions)
         self.driver.get(site)
-        self.escolha_distribuidoras()
+        
 
     # concessionarias: option[4]
     def escolha_distribuidoras(self):

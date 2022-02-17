@@ -9,14 +9,15 @@ class SQLite():
         self.os_path = os.path.join(path_db, db_name)
 
     def select_processos(self):
+        """Seleciona todos os processos do banco de dados"""
         conn = sqlite3.connect(self.os_path)
         conn.execute("PRAGMA foreign_keys = 1")
-        df = pd.read_sql_query("SELECT * FROM processos_tarifarios", conn, index_col='id')
+        df = pd.read_sql_query("select * from processos_tarifarios", conn, index_col='id')
         conn.close()
         return df
 
     def info_agente(self, agente: str):
-        """Seleciona o nome padrão definido para às distribuidoras na tabela info_concessionarias."""
+        """Seleciona o nome padrão das distribuidoras na tabela info_concessionarias"""
         conn = sqlite3.connect(self.os_path)
         conn.execute("PRAGMA foreign_keys = 1")
         cursor = conn.cursor()
@@ -29,12 +30,13 @@ class SQLite():
         return sigla
 
     def inserir_sqlite(self, df_novos):
+        """Insere os novos processos encontrados na varredura"""
         try:
             conn = sqlite3.connect(self.os_path)
             conn.execute("PRAGMA foreign_keys = 1")
             df_novos.to_sql('processos_tarifarios', conn, if_exists='append', index=False)
             conn.close()
-            print('dados acima foram inseridos')
+            print('Dados inseridos com sucesso')
 
         except sqlite3.Error as error:
             print('Conexao falhou', error)

@@ -1,15 +1,15 @@
-#pacotes utilizados
+# Pacotes utilizados
 from coletor import coletor_tr
 from conexao_sql import SQLite
 from seletor import PainelAneel
+from downloader import download
 import pandas as pd
 import tratamento_dados_aneel as tda
-pd.options.display.max_columns = 500
 pd.options.mode.chained_assignment = None
-
 
 def iniciar_selecao():
     aneel = PainelAneel()
+    aneel.escolha_distribuidoras()
     aneel.escolha_agentes()
     aneel.escolha_processo()
     aneel.escolha_ano()
@@ -17,19 +17,27 @@ def iniciar_selecao():
     tabela_aneel = coletor_tr(aneel.driver)
     return tabela_aneel
 
-
 def iniciar_tratamento(tabela, data_corte):
     df_aneel = tda.criar_df_aneel(tabela)
     df_aneel_corte = tda.filtrar_data_processo(df_aneel, data_corte=data_corte)
     df_aneel_padrao = tda.nome_padrao_arquivo(df_aneel_corte)
     return df_aneel_padrao
 
-
 def relacao_arquivos_novos(df_padrao):
     df_banco = SQLite().select_processos()
     df_novos = pd.merge(df_padrao, df_banco, on=list(df_banco.columns), indicator=True)
-    df_novos = df_novos.loc[df_novos['_merge']=='left_only', :]
-    return df_novos
+    return df_novos.loc[df_novos['_merge']=='left_only', :]
+
+def atualizar_dados(df):
+    print(df.values.tolist())
+    while True:
+        resposta = input('Deseja atualizar o banco e realizar o download dos arquivos printados acima? [y/n] ')
+        if resposta == 'y':
+            SQLite().inserir_sqlite(df)
+            download(df)
+            return None
+        elif resposta == 'n':
+            return None
 
 def main():
     tabela_aneel = iniciar_selecao()
@@ -37,12 +45,10 @@ def main():
     df_novos = relacao_arquivos_novos(df_padrao=df_aneel_padrao)
     if len(df_novos) == 0:
         print('Nenhum processo novo foi encontrado')
-        print(f'Ultimo processo mapeado: {df_aneel_padrao.iloc[0, :].values.tolist()}')
+        print(f'Último processo mapeado: {df_aneel_padrao.iloc[0, :].values.tolist()}')
         return None
-    print(df_novos.values.tolist())
-    SQLite().inserir_sqlite(df_novos)
-
+    atualizar_dados(df_novos=df_novos)
 
 if __name__ == '__main__':
-    #iniciar_selecao()
     main()
+
