@@ -20,14 +20,12 @@ def clear_string(string):
 def coletor_tr(driver):
     sleep(2)
     soup = BeautifulSoup(driver.page_source, features='html.parser')
+    driver.quit()
     style = {'style': "padding-left: 5px; padding-bottom: 5px; padding-right: 5px; padding-top: 5px;"}
     tabela_tr = soup.find_all('tr', style)[1::]
-    return coletor_td(tabela_tr)
-
-def coletor_td(tag_tr):
     td_css = {'valign': 'top', 'class': 'linha2'}
     lista_aneel = []
-    for linha in tag_tr:
+    for linha in tabela_tr:
         td = linha.find_all('td', td_css)
         processo = clear_string(td[2])
         if processo in ['REAJUSTE', 'REVISAO', 'REVISAOEXTRAORDINARIA']:

@@ -3,8 +3,10 @@ import pandas as pd
 import os
 
 class SQLite():
-    def __init__(self, path: str, db_name: str):
-        self.os_path = os.path.join(path, db_name)
+    def __init__(self):
+        path_db = r'D:\python_projects\cpfl\db_sqlite'
+        db_name = 'central_dist.db'
+        self.os_path = os.path.join(path_db, db_name)
 
     def select_processos(self):
         conn = sqlite3.connect(self.os_path)
