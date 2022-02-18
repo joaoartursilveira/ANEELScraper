@@ -17,11 +17,11 @@ def clear_string(string: str) -> str:
     limpado = unidecode(''.join(char for char in string)).replace(' ', '').upper()
     return ''.join(char for char in limpado if char.isalnum())
 
-def localizar_arquivo(arquivo, agente, data_processo, processo, lista_link):
+def localizar_arquivo(agente, data_processo, processo, arquivo,lista_link):
     """"Procura os links que contenham o arquivo procurado (SPARTA ou PCAT)"""
     if arquivo in lista_link['href'].upper():
         agente_padrao = SQLite().info_agente(agente)
-        lista_processo = [arquivo, agente_padrao, data_processo, processo, lista_link['href']]
+        lista_processo = [agente_padrao, data_processo, processo, arquivo, lista_link['href']]
         return lista_processo
 
 def coletor_tr(driver):
@@ -40,8 +40,8 @@ def coletor_tr(driver):
             agente = clear_string(td[0])
             data_processo = formatar_data(td[3].text)
             for links in linha('a', href=True):
-                lista_sparta = localizar_arquivo('SPARTA', agente, data_processo, processo, links)
-                lista_pcat = localizar_arquivo('PCAT', agente, data_processo, processo, links)
+                lista_sparta = localizar_arquivo(agente, data_processo, processo, 'SPARTA', links)
+                lista_pcat = localizar_arquivo(agente, data_processo, processo, 'PCAT', links)
                 if lista_sparta is not None:
                     lista_aneel.append(lista_sparta)
                 if lista_pcat is not None:

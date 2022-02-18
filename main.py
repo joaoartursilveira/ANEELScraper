@@ -25,16 +25,17 @@ def iniciar_tratamento(tabela, data_corte):
 
 def relacao_arquivos_novos(df_padrao):
     df_banco = SQLite().select_processos()
-    df_novos = pd.merge(df_padrao, df_banco, on=list(df_banco.columns), indicator=True)
-    return df_novos.loc[df_novos['_merge']=='left_only', :]
+    df_novos = pd.merge(df_padrao, df_banco, on=list(df_banco.columns), how='left', indicator=True)
+    return df_novos.loc[df_novos['_merge']=='left_only', 'distribuidora':'nome_padrao']
 
-def atualizar_dados(df):
-    print(df.values.tolist())
+def atualizar_dados(dn):
+    print(dn)
     while True:
         resposta = input('Deseja atualizar o banco e realizar o download dos arquivos printados acima? [y/n] ')
         if resposta == 'y':
-            SQLite().inserir_sqlite(df)
-            download(df)
+            for tabela, df in dn.items():
+                SQLite().inserir_sqlite(df_novos=df, tabela=tabela)
+            download(dn.get('processo_arquivamento'))
             return None
         elif resposta == 'n':
             return None
@@ -43,11 +44,12 @@ def main():
     tabela_aneel = iniciar_selecao()
     df_aneel_padrao = iniciar_tratamento(tabela_aneel, data_corte='2021-12-31')
     df_novos = relacao_arquivos_novos(df_padrao=df_aneel_padrao)
+    dict_normalizado = tda.normalizar_dados(df_novos)
     if len(df_novos) == 0:
         print('Nenhum processo novo foi encontrado')
         print(f'Último processo mapeado: {df_aneel_padrao.iloc[0, :].values.tolist()}')
         return None
-    atualizar_dados(df_novos=df_novos)
+    atualizar_dados(dn=dict_normalizado)
 
 if __name__ == '__main__':
     main()
