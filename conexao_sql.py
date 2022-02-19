@@ -5,16 +5,15 @@ import os
 class SQLite():
     def __init__(self):
         path_db = r'D:\python_projects\cpfl\db_sqlite'
-        db_name = 'central_dist_new.db'
+        db_name = 'processo_tarifario_aneel.db'
         self.os_path = os.path.join(path_db, db_name)
 
     def select_processos(self):
         """Seleciona todos os processos do banco de dados"""
         conn = sqlite3.connect(self.os_path)
         conn.execute("PRAGMA foreign_keys = 1")
-        query = """select distribuidora, data_processo, processo, arquivo, link from processo_tarifario pt 
-        inner join processo_arquivamento pa on pt.chave_processo=pa.chave_processo"""
-        df = pd.read_sql_query(query, conn)
+        query = """select * from processo_tarifario"""
+        df = pd.read_sql(query, conn, index_col='id')
         conn.close()
         return df
 
@@ -47,4 +46,4 @@ class SQLite():
     
 if __name__ == '__main__':
     df = SQLite().select_processos()
-    print(df)
+    print(df.columns)

@@ -33,9 +33,8 @@ def atualizar_dados(dn):
     while True:
         resposta = input('Deseja atualizar o banco e realizar o download dos arquivos printados acima? [y/n] ')
         if resposta == 'y':
-            for tabela, df in dn.items():
-                SQLite().inserir_sqlite(df_novos=df, tabela=tabela)
-            download(dn.get('processo_arquivamento'))
+            SQLite().inserir_sqlite(df_novos=dn, tabela='processo_tarifario')
+            download(dn)
             return None
         elif resposta == 'n':
             return None
@@ -44,12 +43,11 @@ def main():
     tabela_aneel = iniciar_selecao()
     df_aneel_padrao = iniciar_tratamento(tabela_aneel, data_corte='2021-12-31')
     df_novos = relacao_arquivos_novos(df_padrao=df_aneel_padrao)
-    dict_normalizado = tda.normalizar_dados(df_novos)
     if len(df_novos) == 0:
         print('Nenhum processo novo foi encontrado')
         print(f'Último processo mapeado: {df_aneel_padrao.iloc[0, :].values.tolist()}')
         return None
-    atualizar_dados(dn=dict_normalizado)
+    atualizar_dados(dn=df_novos)
 
 if __name__ == '__main__':
     main()

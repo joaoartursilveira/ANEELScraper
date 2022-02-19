@@ -20,15 +20,7 @@ def nome_padrao_arquivo(df):
     df['extensao'] = df['link'].apply(lambda x: x.split('.')[-1])
     df['chave_processo'] = df['distribuidora']+'_'+df['data_processo']+'_'+df['processo']
     df['nome_padrao'] = df['arquivo']+'_'+df['chave_processo']+'_('+df['identificador']+').'+df['extensao']
-    return df.drop(columns=['identificador', 'extensao'])
-
-def normalizar_dados(df_padrao):
-    df_pt_colunas = ['distribuidora','data_processo','processo','chave_processo']
-    df_arquivamento_colunas = ['arquivo', 'chave_processo', 'link', 'nome_padrao']
-    df_pt = df_padrao.loc[:, df_pt_colunas].drop_duplicates()
-    df_arquivamento = df_padrao.loc[:, df_arquivamento_colunas]
-    return {'processo_tarifario': df_pt,
-            'processo_arquivamento': df_arquivamento}
+    return df.drop(columns=['identificador', 'extensao','chave_processo'])
 
 
 if __name__ == '__main__':
