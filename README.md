@@ -13,7 +13,7 @@ O usuário deve executar apenas o main.py, englobando os processos:
 
 Além do mapeamento dos arquivos citados, o banco de dados vem com a extração das tarifas (soma das abas TUSD e TE) e do efeito consumidor médio das PCAT, feitos em outro projeto, para que o usuário possa interagir diretamente com o banco, sem a necessidade do download de todos os arquivos. Abaixo pode-se ver o diagrama do banco de dados, bem como a relação entre as tabelas. <br/>
 <p align="center">
-  <img src="diagrama_aneel.png" width="750">
+  <img src="/db/diagrama_aneel.png" width="750">
 </p>
 
 O processo é feito com base no site da ANEEL e todas as informações estão ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique a vontade para clonar o repositório e explorar todas as funcionalidades.
