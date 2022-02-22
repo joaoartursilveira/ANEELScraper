@@ -1,8 +1,8 @@
+from time import sleep
 from bs4 import BeautifulSoup
 from datetime import datetime
 from unidecode import unidecode
-from time import sleep
-from conexao_sql import SQLite
+from .conexao_sql import SQLite
 import re
 
 

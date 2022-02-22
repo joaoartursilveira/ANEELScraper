@@ -1,10 +1,10 @@
 # Pacotes utilizados
-from coletor import coletor_tr
-from conexao_sql import SQLite
-from seletor import PainelAneel
-from downloader import download, checkar_pasta
+from apps.coletor import coletor_tr
+from apps.conexao_sql import SQLite
+from apps.seletor import PainelAneel
+from apps.downloader import download, checkar_pasta
 import pandas as pd
-import tratamento_dados_aneel as tda
+import apps.tratamento_dados_aneel as tda
 pd.options.mode.chained_assignment = None
 
 def iniciar_selecao():

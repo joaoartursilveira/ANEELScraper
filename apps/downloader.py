@@ -1,8 +1,8 @@
-from conexao_sql import SQLite
+from .conexao_sql import SQLite
 from pathlib import Path
-import os
-import requests
 import pandas as pd
+import requests
+import os
 
 def download(df):
     """Função de download do dataframe de entrada"""

@@ -1,10 +1,10 @@
-import sqlite3
 import pandas as pd
+import sqlite3
 import os
 
 class SQLite():
     def __init__(self):
-        path_db = r''
+        path_db = r'./db'
         db_name = 'processo_tarifario_aneel.db'
         self.os_path = os.path.join(path_db, db_name)
 
