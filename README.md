@@ -21,7 +21,7 @@ O processo é feito com base no site da ANEEL e todas as informações estão ab
 ###### Armazenamento: sqlite3 - processo_tarifario_aneel.db
 ###### Atualização dos dados: Coleta atualizada no dia 20/02/2022
 
-O usuário deve executar apenas o main.py, englobando os processos:
+O usuário deve executar apenas o main.py, como explicado [anteriormente](#instala%C3%A7%C3%A3o-do-python), englobando os processos:
 - As pastas de arquivamento da SPARTA e PCAT são criadas automaticamente, caso não existam.
 - O links já armazenados no banco podem ser baixados para as pastas, caso o usuário desejar.
 - O scraper inicializa a seleção dos menus do site da aneel.
