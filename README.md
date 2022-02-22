@@ -13,14 +13,13 @@ Após ter o python instalado na máquina, é necessário criar um ambiente virtu
 
 **Detalhe: a instalação e configuração do ambiente virtual são feitos uma única vez. Sempre que desejar executar o código, repita os passos 1, 2, 4 e 7.**
 
-## Comentário sobre o módulo
-O processo é feito com base no site da ANEEL e todas as informações estão abertas ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique à vontade para clonar o repositório e explorar todas as funcionalidades.
-
-# Scraper em python do site dos resultados tarifários da ANEEL
+# Scraper em python do site dos resultados tarifários da ANEEL para as SPARTA e PCAT
 ## URL:  https://www2.aneel.gov.br/aplicacoes_liferay/tarifa/
-###### Arquivos: SPARTA e PCAT
+
+###### Comentário sobre o módulo
+O processo é feito com base no site da ANEEL e todas as informações estão abertas ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique à vontade para clonar o repositório e explorar todas as funcionalidades.
 ###### Armazenamento: sqlite3 - processo_tarifario_aneel.db
-###### Coleta atualizada em 20/02/2022
+###### Atualização dos dados: Coleta atualizada no dia 20/02/2022
 
 O usuário deve executar apenas o main.py, englobando os processos:
 - As pastas de arquivamento da SPARTA e PCAT são criadas automaticamente, caso não existam.
