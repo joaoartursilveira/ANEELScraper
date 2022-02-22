@@ -1,4 +1,4 @@
-# Instação do Python
+# Instalação do Python
 Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [PythonYouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
 
 ## Criação do ambiente virtual
