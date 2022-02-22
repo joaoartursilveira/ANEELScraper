@@ -1,4 +1,18 @@
-## Scraper em python do site dos resultados tarifários da ANEEL
+# Instação do Python
+Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [PythonYouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
+
+## Criação do ambiente virtual
+Após ter o python instalado na máquina, é necessário criar um ambiente virtual para hospedar todas as dependencias utilizadas na produção deste módulo, para isso:
+- Navegue até uma pasta qualquer que irá abrigar o módulo.
+- Digite "cmd" (sem aspas) na barra do explorador de arquivos da pasta atual e a janela de comandos aparecerá.
+- Digite o comando "python -m venv venv" (sem as aspas) e... pronto, seu ambiente virtual foi criado com sucesso.
+- Ative o ambiente virtual com o comando "venv\scripts\activate" (sem as aspas)
+- O termo (venv) irá aparecer no começo da linha, indicando que o ambiente foi ativado.
+- Instale todas as dependencias do módulo com o comando "pip install -r requirements.txt" (sem as aspas)
+
+Pronto, o ambiente virtual foi criado e configurado com sucesso. Para iniciar o código, com o ambiente virtual ainda ativado, digite o comando "python main.py" (sem as aspas).
+
+# Scraper em python do site dos resultados tarifários da ANEEL
 ## URL:  https://www2.aneel.gov.br/aplicacoes_liferay/tarifa/
 ###### Arquivos: SPARTA e PCAT
 ###### Armazenamento: sqlite3 - processo_tarifario_aneel.db
