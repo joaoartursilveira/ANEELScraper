@@ -1,5 +1,5 @@
 # Instalação do Python
-Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [PythonYouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
+Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [Python YouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
 
 ## Criação do ambiente virtual
 Após ter o python instalado na máquina, é necessário criar um ambiente virtual para hospedar todas as dependencias utilizadas na produção deste módulo, para isso:
