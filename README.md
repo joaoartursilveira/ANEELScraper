@@ -5,7 +5,7 @@ Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. 
 Caso o usuário for familiar com o github, prossiga normalmente com a clonagem do repositório ou download do zip. Para os não familiares, o zip pode ser feito [aqui](https://github.com/joaoartursilveira/ANEEL/archive/refs/heads/master.zip). Extraia a pasta zipada no local escolhido para abrigar o módulo.
 
 ## Setup do ambiente
-Após a instalação do python e a extração do zip é necessário criar um ambiente virtual para hospedar todas as dependências utilizadas na produção deste módulo, para isso:
+Após a instalação do python e a extração do zip, é necessário criar um ambiente virtual para hospedar todas as dependências utilizadas na produção deste módulo, para isso:
 1. Navegue até a pasta escolhida para abrigar o módulo.
 2. Digite "cmd" (sem aspas) na barra do explorador de arquivos da pasta e a janela de comandos aparecerá.
 3. Digite o comando "python -m venv venv" (sem as aspas) e... pronto, seu ambiente virtual foi criado com sucesso.
