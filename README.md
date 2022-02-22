@@ -1,10 +1,13 @@
 # Instalação do Python
 Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [Python YouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
 
-## Criação do ambiente virtual
-Após ter o python instalado na máquina, é necessário criar um ambiente virtual para hospedar todas as dependencias utilizadas na produção deste módulo, para isso:
-1. Navegue até uma pasta qualquer que irá abrigar o módulo.
-2. Digite "cmd" (sem aspas) na barra do explorador de arquivos da pasta atual e a janela de comandos aparecerá.
+## Download do módulo
+Caso o usuário for familiar com o github, prossiga normalmente com a clonagem do repositório ou download do zip. Para os não familiares, o zip pode ser feito [aqui](https://github.com/joaoartursilveira/ANEEL/archive/refs/heads/master.zip). Extraia a pasta zipada no local escolhido para abrigar o módulo.
+
+## Setup do ambiente
+Após a instalação do python e a extração do zip é necessário criar um ambiente virtual para hospedar todas as dependências utilizadas na produção deste módulo, para isso:
+1. Navegue até a pasta escolhida para abrigar o módulo.
+2. Digite "cmd" (sem aspas) na barra do explorador de arquivos da pasta e a janela de comandos aparecerá.
 3. Digite o comando "python -m venv venv" (sem as aspas) e... pronto, seu ambiente virtual foi criado com sucesso.
 4. Ative o ambiente virtual com o comando "venv\scripts\activate" (sem as aspas)
 5. O termo (venv) irá aparecer no começo da linha, indicando que o ambiente foi ativado.
@@ -20,6 +23,7 @@ Após ter o python instalado na máquina, é necessário criar um ambiente virtu
 O processo é feito com base no site da ANEEL e todas as informações estão abertas ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique à vontade para clonar o repositório e explorar todas as funcionalidades.
 ###### Armazenamento: sqlite3 - processo_tarifario_aneel.db
 ###### Atualização dos dados: Coleta atualizada no dia 20/02/2022
+
 
 O usuário deve executar apenas o main.py, como explicado [anteriormente](#instala%C3%A7%C3%A3o-do-python), englobando os processos:
 - As pastas de arquivamento da SPARTA e PCAT são criadas automaticamente, caso não existam.
