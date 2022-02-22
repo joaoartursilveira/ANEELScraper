@@ -13,7 +13,7 @@ class PainelAneel():
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service)
         ignored_exceptions = (NoSuchElementException, StaleElementReferenceException)
-        self.wait = WebDriverWait(self.driver, 10, ignored_exceptions=ignored_exceptions)
+        self.wait = WebDriverWait(self.driver, 20, ignored_exceptions=ignored_exceptions)
         self.driver.get(site)
         
 

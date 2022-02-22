@@ -2,7 +2,7 @@
 from coletor import coletor_tr
 from conexao_sql import SQLite
 from seletor import PainelAneel
-from downloader import download
+from downloader import download, checkar_pasta
 import pandas as pd
 import tratamento_dados_aneel as tda
 pd.options.mode.chained_assignment = None
@@ -50,5 +50,7 @@ def main():
     atualizar_dados(dn=df_novos)
 
 if __name__ == '__main__':
+    checkar_pasta('pcat')
+    checkar_pasta('sparta')
     main()
 

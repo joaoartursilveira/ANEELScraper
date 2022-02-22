@@ -4,7 +4,7 @@ import os
 
 class SQLite():
     def __init__(self):
-        path_db = r'D:\python_projects\cpfl\db_sqlite'
+        path_db = r''
         db_name = 'processo_tarifario_aneel.db'
         self.os_path = os.path.join(path_db, db_name)
 
