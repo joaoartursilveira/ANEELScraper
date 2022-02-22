@@ -16,4 +16,4 @@ Além do mapeamento dos arquivos citados, o banco de dados vem com a extração 
   <img src="/db/diagrama_aneel.png" width="750">
 </p>
 
-O processo é feito com base no site da ANEEL e todas as informações estão ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique a vontade para clonar o repositório e explorar todas as funcionalidades.
+O processo é feito com base no site da ANEEL e todas as informações estão ao público. Dito isso, esse módulo pode ser aprimorado para incluir novos arquivamentos, como as notas técnicas, resoluções homologatórias, dentre outros. Fique à vontade para clonar o repositório e explorar todas as funcionalidades.
