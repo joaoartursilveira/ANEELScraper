@@ -8,7 +8,7 @@ Após ter o python instalado na máquina, é necessário criar um ambiente virtu
 3. Digite o comando "python -m venv venv" (sem as aspas) e... pronto, seu ambiente virtual foi criado com sucesso.
 4. Ative o ambiente virtual com o comando "venv\scripts\activate" (sem as aspas)
 5. O termo (venv) irá aparecer no começo da linha, indicando que o ambiente foi ativado.
-6. Instale todas as dependencias do módulo com o comando "pip install -r requirements.txt" (sem as aspas) e... pronto, o ambiente virtual foi criado e configurado com sucesso.
+6. Instale todas as dependencias do módulo com o comando "pip install -r requirements.txt" (sem as aspas) e... pronto, o ambiente virtual foi configurado com sucesso.
 7. Para executar o código, digite, com o ambiente virtual ainda ativado, o comando "python main.py" (sem as aspas).
 
 **Detalhe: a instalação e configuração do ambiente virtual são feitos uma única vez. Sempre que desejar executar o código, repita os passos 1, 2, 4 e 7.**
