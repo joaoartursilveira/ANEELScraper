@@ -7,6 +7,7 @@
 __pycache__
 .ipynb_checkpoints
 venv_scraper
+venv
 
 # Local History for Visual Studio Code
 .history/
