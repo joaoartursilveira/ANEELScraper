@@ -2,7 +2,7 @@
 Antes de qualquer coisa, precisa-se do python instalado na maquina do usuário. Para tanto, recomenda-se o guia [Python YouTube](https://www.youtube.com/watch?v=KeDLsBmi3JA) com todos os passos. A instalação é bem simples e rápida.
 
 ## Download do módulo
-Caso o usuário for familiar com o github, prossiga normalmente com a clonagem do repositório ou download do zip. Para os não familiares, o zip pode ser feito [aqui](https://github.com/joaoartursilveira/ANEEL/archive/refs/heads/master.zip). Extraia a pasta zipada no local escolhido para abrigar o módulo.
+Caso o usuário for familiar com o github, prossiga normalmente com a clonagem do repositório ou download do zip. Para os não familiares, o zip pode ser feito [aqui](https://github.com/joaoartursilveira/ANEELScraper/archive/refs/heads/master.zip). Extraia a pasta zipada no local escolhido para abrigar o módulo.
 
 ## Setup do ambiente
 Após a instalação do python e a extração do zip, é necessário criar um ambiente virtual para hospedar todas as dependências utilizadas na produção deste módulo. Caso o usuário já tiver os conhecimentos necessários para criar ambientes e executar os códigos, sinta-se livre para prosseguir. Caso não, siga os passos abaixo:
